@@ -21,11 +21,11 @@ const assertEqual = function(actual, expected) {
 };
 
 
-const head = function(arr) {
+const head = function(array) {
   
-  if (arr.length > 0) {
+  if (array.length > 0) {
     
-    return arr[0];
+    return array[0];
   } else {
     
     return undefined;
