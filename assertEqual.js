@@ -12,11 +12,11 @@ console.assert(sum(1, 20) === 3); // bad / incorrect assertion, and we see it fa
 
 // FUNCTION IMPLEMENTATION
 
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+const assertEqual = function(value1, value2) {
+  if (value1 === value2) {
+    console.log(`✅✅✅ Assertion Passed: ${value1} === ${value2}`);
   } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+    console.log(`🛑🛑🛑 Assertion Failed: ${value1} !== ${value2}`);
   }
 };
 
