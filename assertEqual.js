@@ -1,14 +1,6 @@
 console.assert(1 === 1);      // Nothing happens because true
 console.assert(1 === 1.1);    // Prints out "Assertion failed" to the terminal
 
-// FUNCTION IMPLEMENTATION
-const sum = function(a, b) { 
-  return a + b;
-}
-
-// TEST CODE
-console.assert(sum(1, 2) === 3);
-console.assert(sum(1, 20) === 3); // bad / incorrect assertion, and we see it fail!
 
 // FUNCTION IMPLEMENTATION
 
@@ -20,16 +12,32 @@ const assertEqual = function(value1, value2) {
   }
 };
 
-// TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");  // This should fail
-assertEqual(1, 1);  // This should pass
+const eqArrays = function(value1, value2) {
+
+  if ( value1.length !== value2.length) {
+
+    return false;
+  }
+
+  for(let i = 0; i < value1.length; i++) {
+    if (value1[i] !== value2[i] ){
+      
+      return false; 
+    }
+
+  }
+   return true; 
+}
 
 
+// Test case 1: Arrays are equal
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // ✅✅✅ Assertion Passed: true === true
 
+// Test case 2: Arrays are not equal
+assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false); // ✅✅✅ Assertion Passed: false === false
 
-// TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
+// Test case 3: Arrays with strings are equal
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // ✅✅✅ Assertion Passed: true === true
 
-assertEqual("hello", "hello"); 
-assertEqual("world", "world!");
+// Test case 4: Arrays with strings are not equal
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false); // ✅✅✅ Assertion Passed: false === false
